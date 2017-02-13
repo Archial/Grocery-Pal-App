@@ -1,0 +1,147 @@
+
+package grocerypal;
+
+import java.util.*;
+import javax.swing.JOptionPane;
+import java.text.DateFormat;
+
+public class Payments {
+    
+    
+	 //declare variables
+    String pmtmsg, cCardMsg;
+       
+    String creditCardNumber;
+    double price;{
+    
+   
+    pmtmsg = "Please have your payment method ready for checkout.";
+    //cCardMsg ="Please enter your credit card number: ";
+    
+    //Will want to add expiration date to this
+    
+    //brings up payment message prompt
+    JOptionPane.showMessageDialog(null, pmtmsg);
+    
+    //cCardMsg = "Please enter your credit card number: ";
+    
+    //creditCardNumber = getCreditCardInput(cCardMsg);
+   // creditCardNumber = creditCardInput();
+
+}
+
+
+	/*public String getCreditCardNumber() {
+		return creditCardNumber;
+	}
+
+
+	public void setCreditCardNumber(String creditCardNumber) {
+		this.creditCardNumber = creditCardNumber;
+	}
+
+
+	public double getPrice() {
+		return price;
+	}
+
+
+	public void setPrice(double price) {
+		this.price = price;
+	}*/
+            //getCreditCardInput(String cCardMsg)
+            public void creditCardInput( ) {
+        String tyMsg = "Thank you!";
+        String input = "input";
+	int failCount = 0;
+	//String cCardMsg = "Please enter your credit card number: ";
+        while (true) 
+		{
+		JOptionPane.showInputDialog("Please enter your Credit Card# ");
+                        
+		if (input == null || input.length() == 0)
+			
+                {
+	
+				failCount = failCount + 1;
+				if (failCount > 2) 
+				{
+					System.exit(0); 
+				}
+
+			} //end outer if
+                        
+                        else {
+                    JOptionPane.showMessageDialog(null,tyMsg);
+				break;
+			}//end else
+                        
+		}//end while
+		//return input;
+        
+        
+    }//end method getSCreditCardInput     
+       public void creditCardCSV( ) {
+        String tyMsg2 = "Thank you! We appreciate your business!";
+        String input = "input";
+	int failCount = 0;
+	
+        while (true) 
+		{
+		JOptionPane.showInputDialog("Please enter your 3 digit CSV:");
+                        
+		if (input == null || input.length() == 0)
+			
+                {
+	
+				failCount = failCount + 1;
+				if (failCount > 2) 
+				{
+					System.exit(0); 
+				}
+
+			} //end outer if
+                        
+                        else {
+                    JOptionPane.showMessageDialog(null,tyMsg2);
+				break;
+			}//end else
+                        
+		}//end while
+		//return input;
+        
+        
+    }//end method csv
+       public void creditCardExp( ) {
+        String tyMsg = "Thank you!";
+        String input = "input";
+	int failCount = 0;
+	//String cCardMsg = "Please enter your credit card number: ";
+        while (true) 
+		{
+	JOptionPane.showInputDialog("Please enter your credit cards expiration "
+                + "date as mmyy: ");
+                        
+		if (input == null || input.length() == 0)
+			
+                {
+	
+				failCount = failCount + 1;
+				if (failCount > 2) 
+				{
+					System.exit(0); 
+				}
+
+			} //end outer if
+                        
+                        else {
+                    JOptionPane.showMessageDialog(null,tyMsg);
+				break;
+			}//end else
+                        
+		}//end while
+		//return input;
+        
+        
+    }//end expiration method    
+}
