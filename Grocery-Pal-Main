@@ -1,0 +1,134 @@
+package grocerypal;
+
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.showInputDialog;
+
+/**
+ *
+ * @author Deborah
+ */
+public class Grocerypal {
+
+    /**
+     * @param args the command line arguments
+     */
+ 
+    
+    
+    public static void main(String[] args) {
+      
+   
+    //declare variables
+    String greetingMessage, promptUser, promptPassword;
+    String userName, password;        
+    String validation = "Access has been granted. Thank you";   
+    greetingMessage = "Welcome to Grocery Pal!"; 
+    String pmtmsg, cCardMsg = null;  
+    String creditCardNumber = null;
+    double price = 0;
+    String fName = null;
+    String lName = null;
+    
+    //Opening message
+    JOptionPane.showMessageDialog(null, greetingMessage);
+    
+    //opening log in username
+    promptUser = "Please enter your username: ";
+    userName = getStringInput(promptUser);
+    
+    //opening log in password  
+    promptPassword = "Please enter your password: ";
+    password = getStringInput2(promptPassword);
+  
+    registration reg = new registration();
+    reg.customerInfo1();
+    
+    //call Grocery Pal Cart method 'cart'
+    GroceryPalCart cart = new GroceryPalCart();
+    cart.groceryPalCart();
+    
+    //Calls the payment class
+    Payments pay = new Payments();
+    //pay.getCreditCardNumber();
+    //pay.setCreditCardNumber(creditCardNumber);
+    //pay. getPrice();
+    //pay.setPrice(price);
+    //pay.getCreditCardInput(cCardMsg);
+    pay.creditCardInput();
+    pay.creditCardExp();
+    pay.creditCardCSV();
+    
+    }//end main
+
+    public static String getStringInput(String promptUser) {
+      
+        String input;
+	int failCount = 0;
+	
+        while (true) 
+		{
+                    input = JOptionPane.showInputDialog(promptUser);
+                        
+                    if (input == null || ! input.equals("FeedMe")){
+                            
+                        failCount = failCount + 1;
+                            if (failCount > 2) {
+                                    JOptionPane.showMessageDialog(null, "Too many fails, please call customer service at 800.555.1212.");
+                                    System.exit(0);
+					//System.exit(0);
+				}//end inner if
+                                JOptionPane.showMessageDialog(null, "Invalid username. Please enter your username");
+			} //end outer if
+                        
+                        else {
+				break;
+			}//end else
+                        
+		}//end while
+		return input;
+        
+        
+    }//end method getStringInput
+    //begin password
+    public static String getStringInput2(String promptPassword) {
+      
+        String input;
+	int failCount = 0;
+	String valid = "Thank you, access granted!";
+        
+        while (true){
+                input = JOptionPane.showInputDialog(promptPassword);
+                if (input == null || ! input.equals("1234abcd")) {
+                    
+                         failCount = failCount + 1;
+                            if (failCount > 2) {
+                                    JOptionPane.showMessageDialog(null, "Too many fails, please call customer service at 800.555.1212.");
+                                    System.exit(0);
+					//System.exit(0);
+				}//end inner if
+                                JOptionPane.showMessageDialog(null, "Invalid password. Please enter your password");
+			
+			} //end outer if
+                        
+                        
+                        else {
+                    
+                    JOptionPane.showMessageDialog(null,valid);
+                    
+			break;
+                                
+                        
+			}//end else
+                        
+		}//end while
+		return input;
+                
+                
+        
+    }//end method getStringInput2
+
+        }//end class
+        
+    
+    
