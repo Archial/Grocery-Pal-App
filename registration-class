@@ -1,0 +1,106 @@
+package grocerypal;
+
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+
+public class registration {
+    String fName = "Please enter your first name";
+    String lName = "Please enter your last name";
+    String address = "Please enter your street address: ";
+    String city  ="Please enter your city: ";
+    String state = "Please enter your state: ";
+    String zipCode = "Please enter your zip code: ";
+    String teleNumb = "Please enter your telephone number: ";
+    String tryAgain = "Error. Please try again";
+    
+     public void customerInfo1 () {
+    
+    Scanner scan = new Scanner(System.in);
+    
+   
+    JOptionPane.showInputDialog(fName);
+    //fName = scan.next();
+        
+    if (fName == null)  {
+    
+      JOptionPane.showMessageDialog(null, tryAgain);
+     }
+        else {
+        
+        JOptionPane.showInputDialog(lName);
+        //lName = scan.next();
+        }
+    
+        if (lName == null) {
+        
+        JOptionPane.showMessageDialog(null, tryAgain);
+        }
+        else {
+        
+             // lName = scan.nextLine();
+         JOptionPane.showInputDialog(address);
+        
+        }
+        
+        if (address == null){
+        
+        JOptionPane.showMessageDialog(null, tryAgain);
+        
+        }
+        
+        else {
+        
+        //address = scan.nextLine();
+       JOptionPane.showInputDialog(city); 
+        
+        }
+
+        if (city == null) {
+        
+        JOptionPane.showMessageDialog(null, tryAgain);
+        }
+        else {
+        
+        //city = scan.nextLine();
+       JOptionPane.showInputDialog(state); 
+        
+        }
+        if (state == null) {
+        
+        JOptionPane.showMessageDialog(null, tryAgain);
+         
+        } 
+        else   {
+        
+        //state = scan.nextLine();
+       JOptionPane.showInputDialog(zipCode); 
+        
+        }
+        
+        if (zipCode == null) {
+        
+        JOptionPane.showMessageDialog(null, tryAgain);
+        
+        }
+        
+        else {
+        
+        JOptionPane.showInputDialog(teleNumb); 
+        
+        }
+        
+        if (teleNumb == null) {
+        
+        JOptionPane.showMessageDialog(null, tryAgain);
+        }
+        
+        else {
+        
+        JOptionPane.showMessageDialog(null, "Thank you for registering with Grocery Pal!!");
+        
+        
+        }
+                
+    } 
+    
+}
