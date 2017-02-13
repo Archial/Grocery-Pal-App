@@ -1,0 +1,71 @@
+
+package grocerypal;
+
+
+import javax.swing.JOptionPane;
+
+public class GroceryPalCart {
+    
+    int qtyArray[]= new int [3];
+    String itemArray[] = new String[3];
+    
+public void groceryPalCart () 
+
+{
+            
+       // declare variables
+       String item, welcomeMsg, thanksMsg, orderMsg, outputMsg, enterQ;   
+       int quantity;
+       double price = 3.5 , tax = .06; 
+         
+                  
+       welcomeMsg = "Welcome to the Shopping Cart!";       //welcome Msg +message    
+       JOptionPane.showMessageDialog (null, welcomeMsg);  //dialog box
+       
+       //get customer input
+       item = JOptionPane.showInputDialog("Please enter the item");
+       enterQ = JOptionPane.showInputDialog("Please enter the quantity");
+       quantity = getNumericInput(enterQ);//Integer.parseInt(enterQ);
+              
+       // declare variable
+       double totalPrice;     
+       
+       totalPrice = quantity * price + (price * tax);       
+       orderMsg = "\n\nItems Ordered: " + item + "\n\nQuantity: " + quantity + "\n\n Your total: $ "
+				+ totalPrice + "\n\n";         
+       
+       thanksMsg = "GroceryPal appreciates your business!" ; // thank you message 
+       outputMsg = orderMsg + thanksMsg;
+       JOptionPane.showMessageDialog (null, outputMsg);     //Dialog box
+       
+  }
+    public static int getNumericInput(String prompt){        
+        int failCount = 0;
+             while (true){
+                try {
+                    String input = JOptionPane.showInputDialog(prompt);
+                    int number = Integer.parseInt(input);
+                    return number;
+                }   
+                    catch (NumberFormatException b) {
+                        failCount = failCount + 1;
+                            if (failCount > 2) {
+                                    JOptionPane.showMessageDialog(null, "Too many fails, please call customer service at 800.555.1212.");
+                                    System.exit(0);
+					//System.exit(0);
+				}//end inner if
+                                JOptionPane.showMessageDialog(null, "Invalid quantity. Please enter a valid quantity");
+                    //end else
+                        
+                    }//end while
+	
+            }
+                
+    }   
+    
+    
+    }
+    
+ 
+
+
