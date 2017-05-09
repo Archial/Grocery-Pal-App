@@ -31,24 +31,7 @@ public class Payments {
 }
 
 
-	/*public String getCreditCardNumber() {
-		return creditCardNumber;
-	}
-
-
-	public void setCreditCardNumber(String creditCardNumber) {
-		this.creditCardNumber = creditCardNumber;
-	}
-
-
-	public double getPrice() {
-		return price;
-	}
-
-
-	public void setPrice(double price) {
-		this.price = price;
-	}*/
+	
             //getCreditCardInput(String cCardMsg)
             public void creditCardInput( ) {
         String tyMsg = "Thank you!";
