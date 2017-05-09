@@ -1,2 +1,3 @@
 5/9/2017 12:44
-*Changed the overall type of products offered in the program. Focused on fruits from a set list. Also added to the registration dialog to make it engaging for the user
+*Began process of changing the overall type of products offered in the program. Focused on fruits from a set list. Also added to the registration dialog to make it engaging for the user
+*Corrected the validation portion of the payment class. Was originally accepting all input and advancing the the next prompt
