@@ -1,6 +1,4 @@
-/*This is phase 5 code
 
- */
 package grocerypal;
 
 import java.util.*;
@@ -8,10 +6,7 @@ import javax.swing.JOptionPane;
 import java.text.DateFormat;
 import java.util.Scanner;
 
-/**
- *
- * @author Deborah & Shelley
- */
+
 public class Payments {
     
     
@@ -27,113 +22,111 @@ public class Payments {
    private String support = "Please contact support at 1-800-555-1212 for further assistance";
    
    //private String input = "input";
-    double price;{
+    
    
     
-     
-    //brings up payment message prompt
-    JOptionPane.showMessageDialog(null, pmtMsg);
-    
+public String getCreditCardInput (String cCardMsg){
+cCardMsg = "Please enter your Credit Card number: ";
+String input;
+int failCount= 0;
 
-}
-//Began accepting user input for CC Number
-    public void creditCardInput( ) {
-    
-        Scanner scan = new Scanner ( System.in );
-        String input = "input";
-        int failCount = 0;
-	
-        while (true) 
-		{
-		JOptionPane.showInputDialog(cCardMsg);
-                //String input = scan.next();
+
+
+while (true){
+input = JOptionPane.showInputDialog(cCardMsg);
+if (input == null || ! input.equals("input")) {
+                    
+         failCount = failCount + 1;
+            if (failCount > 2) {
+                JOptionPane.showMessageDialog(null, support);
+                System.exit(0);
+					
+                        }//end inner if
+            
+        JOptionPane.showMessageDialog(null, errMsg1);
+			
+			} //end outer if
                         
-		//if (input == null || input.length() == 0)
-                  if (input == null || ! input.equals( "input"))
-                {
-	
-		failCount = failCount + 1;
+                        
+            else {
+                    
+            JOptionPane.showMessageDialog(null,tyMsg);
+                    
+                break;
+                                
+                        
+                    }//end else
+                        
+    }//end while
+    return input;
                 
-		if (failCount > 2) 
-			{
-                           JOptionPane.showMessageDialog(null, support);
-			
-                           System.exit(0); 
-				 }
-                           JOptionPane.showMessageDialog(null, errMsg1);
-			} //end inner if
-                       
-                        else {
-                    JOptionPane.showMessageDialog(null,tyMsg);
-				break;
-			}//end else
-                        
-		}//end while
-		
-        
-        
-    }//end method getSCreditCardInput     
-       public void creditCardCSV( ) {
-        
-        String input = "input";
-        
-	int failCount = 0;
-	
-        while (true) 
-		{
-		JOptionPane.showInputDialog("Please enter your 3 digit CSV: ");
-                        
-		if (input == null || ! input.equals("123"))
-			
-                {
-	
-				failCount = failCount + 1;
-				if (failCount > 2) 
-				{
-                                    JOptionPane.showMessageDialog(null, support);
-					System.exit(0); 
-				}
-                                        JOptionPane.showMessageDialog(null, errMsg1);
-			} //end outer if
-                        
-                        else {
-                    JOptionPane.showMessageDialog(null,tyMsg2);
-				break;
-			}//end else
-                        
-		}//end while
-		
-        
-        
-    }//end method csv
-       public void creditCardExp( ) {
-        String input = "input";
-	int failCount = 0;
-	
-        while (true) 
-		{
-	JOptionPane.showInputDialog(expMsg);
-                        
-		if (input == null || input.length() == 0)
-			
-                {
-	
-				failCount = failCount + 1;
-				if (failCount > 2) 
-				{
-					System.exit(0); 
-				}
 
-			} //end outer if
-                        
-                        else {
-                    JOptionPane.showMessageDialog(null,tyMsg);
-				break;
-			}//end else
-                        
-		}//end while
-		//return input;
-        
-        
-    }//end expiration method    
-}
+}//end CC getter
+
+public String getExpiration(){
+
+String input;
+int failCount= 0;
+
+
+while (true){
+input = JOptionPane.showInputDialog(null, expMsg);//expMsg string not required since not listed as parameter
+
+if (input == null ||! input.equals("1122")) {
+    
+failCount = failCount +1;
+
+if (failCount > 2) {
+    
+    JOptionPane.showMessageDialog(null, support);
+    System.exit(0);
+}//end inner if 
+JOptionPane.showMessageDialog(null, errMsg1);
+
+
+}//end outer if
+else {
+
+JOptionPane.showMessageDialog(null, tyMsg);
+
+break;
+
+}//end else
+
+}//end while
+return input;
+}//end getexpiration
+
+public String getCSV(){
+String input;
+int failCount = 0;
+while (true){
+input = JOptionPane.showInputDialog(null, csv);
+
+if (input == null ||! input.equals("123")) {
+    
+failCount = failCount +1;
+
+if (failCount > 2) {
+    
+    JOptionPane.showMessageDialog(null, support);
+    System.exit(0);
+}//end inner if 
+JOptionPane.showMessageDialog(null, errMsg1);
+
+
+}//end outer if
+else {
+
+JOptionPane.showMessageDialog(null, tyMsg);
+
+break;
+
+}//end else
+
+}//end while
+return input;
+
+}//end get csv
+
+}//end payment
