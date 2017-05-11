@@ -1,0 +1,69 @@
+//
+package grocerypal;
+
+
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author Deborah
+ */
+public class registration {
+    private String fName = "Please enter your first name: ";
+    private String lName = "And your last name: ";
+    private String address = "Address: ";
+    private String city  ="City: ";
+    private String state = "State (abbreviated): ";
+    private String zipCode = "Zip Code: ";
+    private String teleNumb = "Preferred Contact Number (without dashes or spaces): ";
+    private String tryAgain = "Error. Please try again";
+    //private int failCount = 0;
+    //private String lastName;
+    
+    
+    
+     public void customerInfo1 () {
+    int failCount = 0;
+    
+    JOptionPane.showMessageDialog(null, "          Thanks for choosing GroceryPal! \nLet's get started with"
+            + " a brief one time registration!");
+    
+    //First Name
+    String firstName;
+    
+    firstName = JOptionPane.showInputDialog(null, fName);
+     
+    String lastName;
+    
+    lastName = JOptionPane.showInputDialog(null, lName);
+    
+    JOptionPane.showMessageDialog(null,"Thank you " + firstName +" " + lastName +"!" );
+
+    //JOptionPane.showMessageDialog(null, address);
+    
+    String strAddr = JOptionPane.showInputDialog(null, address );
+   
+    //JOptionPane.showMessageDialog(null, city);
+    
+    String cityAdd = JOptionPane.showInputDialog(null, city);
+    
+    String stateAdd = JOptionPane.showInputDialog(null, state);
+    
+    String zipAdd = JOptionPane.showInputDialog(null, zipCode);
+    
+    String contactNumb = JOptionPane.showInputDialog(null, teleNumb);
+    
+    JOptionPane.showMessageDialog(null, "Thank you " + firstName + " " + lastName +
+            "! To confirm we have your address at: " + strAddr + " " + cityAdd +
+            " " + stateAdd + " " + zipAdd + " " + " and your "
+                    + "preferred contact number as: " + contactNumb)
+            
+  
+    
+    
+    } //end method
+
+   
+    
+}//end class 
