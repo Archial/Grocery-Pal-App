@@ -64,7 +64,7 @@ public class Payments {
 			} //end inner if
                        
                         else {
-                    JOptionPane.showMessageDialog(null,tyMsg);
+                    JOptionPane.showMessageDialog(null,tyMsg); 
 				break;
 			}//end else
                         
