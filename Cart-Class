@@ -1,5 +1,5 @@
 
-package grocerypal;
+package grocerypal; 
 
 
 import javax.swing.JOptionPane;
