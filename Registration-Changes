@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
  */
 public class registration {
     private String fName = "Please enter your first name: ";
-    private String lName = "And your last name: ";
+    private String lName = "Please enter your last name: ";
     private String address = "Address: ";
     private String city  ="City: ";
     private String state = "State (abbreviated): ";
