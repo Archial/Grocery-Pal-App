@@ -1,4 +1,4 @@
-# Have-to-start-somewhere!--
+# Grocery Pal
 First repository for a simple program
 
 This readme will change as the program grows in size. 
